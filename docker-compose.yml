@@ -1,0 +1,16 @@
+services:
+  ollama:
+    image: ollama/ollama:0.21.0
+    container_name: ollama
+    restart: unless-stopped
+    environment:
+      - OLLAMA_NUM_GPU=0
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
+
+volumes:
+  ollama_data:
