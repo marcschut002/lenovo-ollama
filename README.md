@@ -1,0 +1,2 @@
+# lenovo-ollama
+Ollama
