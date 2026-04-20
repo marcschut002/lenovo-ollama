@@ -6,6 +6,6 @@ until ollama list > /dev/null 2>&1; do
   sleep 1
 done
 
-ollama pull gemma3:4b
+ollama pull llama3.2:3b
 
 wait $SERVE_PID
